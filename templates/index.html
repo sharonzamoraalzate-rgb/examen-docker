@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Parcial Jhonathan</title>
+</head>
+<body>
+  <h1>Parcial Jhonathan</h1>
+
+  <form method="POST">
+    <p><input type="text" name="nombre" placeholder="Nombre Producto" required></p>
+    <p><input type="text" name="categoria" placeholder="Categoria" required></p>
+    <p><input type="number" step="0.01" name="precio" placeholder="Precio" required></p>
+    <p><button type="submit">Guardar</button></p>
+  </form>
+
+  {% if mensaje %}<p><b>{{ mensaje }}</b></p>{% endif %}
+
+  <h3>Productos registrados</h3>
+  <table border="1" cellpadding="5">
+    <tr><th>ID</th><th>Nombre</th><th>Categoría</th><th>Precio</th></tr>
+    {% for p in productos %}
+    <tr><td>{{ p[0] }}</td><td>{{ p[1] }}</td><td>{{ p[2] }}</td><td>{{ p[3] }}</td></tr>
+    {% endfor %}
+  </table>
+</body>
+</html>
